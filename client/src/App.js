@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,17 +7,16 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import store from './utils/store';
-
-// import pages
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
-import Success from './pages/Success';
+import store from './utils/store';
+import { Provider } from 'react-redux';
 import OrderHistory from './pages/OrderHistory';
+import Success from './pages/Success';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
